@@ -18,3 +18,9 @@ Answer Select three segment-specific conversion experiments for product and mark
 Keep assumptions, frozen scope and limitations in exports. No raw upload required; supply verified input access and restoration instructions. Security work remains offline and published examples defanged.
 
 Reviewer records accepted/rework/blocked, date, actual reviewer and simulated sponsor role, unresolved low-severity issues with owners/dates and immutable evidence. A filled template without executed checks is not acceptance; formal scope revisions update affected tests before sign-off.
+
+## Specific business acceptance walkthrough
+
+At the monthly growth meeting, the Head of Ecommerce Growth filters TrafficType and VisitorType, checks conversion, sample size and uncertainty, compares two priority lists, and assigns up to three experiment hypotheses to product or marketing owners. The analyst provides the evidence and measurement design; the meeting decides what to test.
+
+Supply all five named output artefacts in [deliverables](../project/DELIVERABLES.md), execute SC1–SC5 in [acceptance](../project/ACCEPTANCE_CRITERIA.md), and complete their final-submission evidence table. Show actual values/cases, not only screenshots or report headings. Include the G1 simulated-approval record and a final retain-baseline/revise/pilot recommendation tied to measured evidence.

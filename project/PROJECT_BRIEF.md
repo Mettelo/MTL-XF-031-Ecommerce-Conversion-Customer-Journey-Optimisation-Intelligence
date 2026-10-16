@@ -6,9 +6,33 @@ This is a simulated confidential-client engagement using public/open data. Stake
 
 ## Problem and commission
 
-Paid traffic and product-page investment compete for a limited experimentation budget. The growth team cannot distinguish high-volume, low-conversion traffic segments from small unstable groups, and needs an auditable shortlist of journey improvements rather than an unsupported promise of sales uplift.
+The retailer's growth team must choose its next three product and acquisition experiments. Marketing sees traffic-source totals, while product managers see page-engagement summaries; neither view shows which sufficiently large visitor groups combine weak purchase conversion with meaningful session volume. A high non-purchase count can reflect scale, while a low conversion rate can reflect a small or seasonal group. Spending the next development sprint against the wrong signal risks consuming experiment capacity without a defensible hypothesis.
 
 > Select three segment-specific conversion experiments for product and marketing review.
+
+## Practical use case and business outputs
+
+At the monthly growth meeting, the Head of Ecommerce Growth filters TrafficType and VisitorType, checks conversion, sample size and uncertainty, compares two priority lists, and assigns up to three experiment hypotheses to product or marketing owners. The analyst provides the evidence and measurement design; the meeting decides what to test.
+
+| Deliverable | What the team must hand over | Required contents |
+| --- | --- | --- |
+| D5 | Segment conversion scorecard | One row per TrafficType × VisitorType; sessions, purchases, non-purchases, conversion %, Wilson interval, overall comparator, gap in percentage points, month distribution and n≥100 eligibility flag. |
+| D6 | Conversion driver and leakage assessment | Descriptive association report plus baseline/model comparison using the approved holdout; show PageValues exclusion, feature timing, PR performance and precision/recall at the locked threshold. |
+| D7 | Two ranked opportunity lists | Baseline top ten by non-purchase volume and alternative top ten by conversion shortfall within the identical eligible segment population; include overlap, rank changes and reasons. |
+| D8 | Growth meeting dashboard | Views for commercial overview, eligible segment comparison, month/visitor diagnostics and evidence quality; user can trace a segment to the action register. |
+| D11 | Three experiment decision cards | Exactly three proposals, or fewer with explicit evidence-based deferral; each names segment, hypothesis, owner role, change to test, randomisation unit, purchase outcome, guardrail, sample-size inputs and stop/review rule. |
+
+## Required success contract
+
+| Success ID | Required deliverable | Specific pass condition |
+| --- | --- | --- |
+| SC1 | D5 — Segment conversion scorecard | Every retained session belongs to exactly one scorecard row; segment counts reconcile to cohort totals; groups below 100 are visible but unranked; 1 purchase/4 sessions=25%. |
+| SC2 | D6 — Conversion driver and leakage assessment | Publish partition counts and exact predictor list; no PageValues/Revenue predictors; report holdout results even when baseline wins; describe end-of-session signals as retrospective. |
+| SC3 | D7 — Two ranked opportunity lists | Deterministic ties use TrafficType then VisitorType; every list row links its scorecard; include at least one excluded/deferred segment and explain why. |
+| SC4 | D8 — Growth meeting dashboard | A reviewer completes three tasks: find largest eligible non-purchase segment, compare its gap/interval, and identify its proposed experiment; all values match the scorecard. |
+| SC5 | D11 — Three experiment decision cards | Every selected segment has ≥100 observed sessions and cited evidence; calculate sample-size needs from declared baseline/MDE/power assumptions; no realised uplift or ordered-checkout-funnel claim. |
+
+[Detailed acceptance](ACCEPTANCE_CRITERIA.md) defines executed evidence; [deliverables](DELIVERABLES.md) defines exact artefacts and ownership. G1 records simulated sponsor approval, not invented real-client agreement.
 
 ## Core scope
 

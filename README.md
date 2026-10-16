@@ -1,53 +1,90 @@
 # MTL-XF-031 — Ecommerce Conversion Customer Journey Optimisation Intelligence
 
-**Track:** Cross-Functional · **Use case:** Commercial / private sector · **Team:** 6–8 · **Duration:** 8 weeks
+**Track:** Cross-Functional · **Sector:** Private-sector commercial operations · **Team:** 6–8 · **Duration:** 8 weeks
 
-This is a simulated confidential-client engagement using public/open data. Stakeholders and commercial/security scenarios are fictional. Do not claim real-client employment, endorsement, operational deployment or realised benefits. This master pack specifies work to be completed; it does not claim the team has executed it.
+## The business problem
 
-## Business commission
+The retailer's growth team must choose its next three product and acquisition experiments. Marketing sees traffic-source totals, while product managers see page-engagement summaries; neither view shows which sufficiently large visitor groups combine weak purchase conversion with meaningful session volume. A high non-purchase count can reflect scale, while a low conversion rate can reflect a small or seasonal group. Spending the next development sprint against the wrong signal risks consuming experiment capacity without a defensible hypothesis.
 
-**Client:** Confidential Online Retailer. **Decision owner:** Head of Ecommerce Growth. **Cadence:** monthly conversion opportunity review.
+**Simulated organisation:** Confidential Online Retailer. **Accountable decision owner:** Head of Ecommerce Growth.
 
-Paid traffic and product-page investment compete for a limited experimentation budget. The growth team cannot distinguish high-volume, low-conversion traffic segments from small unstable groups, and needs an auditable shortlist of journey improvements rather than an unsupported promise of sales uplift.
+## Practical use case
 
-**Decision:** Select three segment-specific conversion experiments for product and marketing review.
+At the monthly growth meeting, the Head of Ecommerce Growth filters TrafficType and VisitorType, checks conversion, sample size and uncertainty, compares two priority lists, and assigns up to three experiment hypotheses to product or marketing owners. The analyst provides the evidence and measurement design; the meeting decides what to test.
 
-## End-to-end delivery
+**Decision the project must enable:** Select three segment-specific conversion experiments for product and marketing review.
 
-Deliver business requirements, governed source acquisition, engineering and data quality, seven defined metrics, baseline/alternative policy comparison, decision dashboard, assurance/UAT, executive recommendation and operational handover. A model alone is insufficient.
+**Current approach:** Select ideas from headline traffic and engagement reports without a consistent eligibility rule.
 
-Baseline ranks TrafficType × VisitorType groups with at least 100 sessions by non-purchase session count. Alternative ranks those same groups by conversion gap below the overall rate, with group sizes and Wilson intervals shown. Recommend at most three experiments; effects remain unmeasured.
+**Required future approach:** Review one reproducible segment scorecard, compare volume-led and conversion-gap priorities, and approve evidence-backed experiment cards.
 
-## Core dataset and frozen cohort
+## Specific deliverables
 
-**S1:** [Online Shoppers Purchasing Intention](https://archive.ics.uci.edu/dataset/468). **Input:** online_shoppers_intention.csv. **Source population:** 12,330 sessions.
+| Deliverable | What the team must hand over | Required contents |
+| --- | --- | --- |
+| D5 | Segment conversion scorecard | One row per TrafficType × VisitorType; sessions, purchases, non-purchases, conversion %, Wilson interval, overall comparator, gap in percentage points, month distribution and n≥100 eligibility flag. |
+| D6 | Conversion driver and leakage assessment | Descriptive association report plus baseline/model comparison using the approved holdout; show PageValues exclusion, feature timing, PR performance and precision/recall at the locked threshold. |
+| D7 | Two ranked opportunity lists | Baseline top ten by non-purchase volume and alternative top ten by conversion shortfall within the identical eligible segment population; include overlap, rank changes and reasons. |
+| D8 | Growth meeting dashboard | Views for commercial overview, eligible segment comparison, month/visitor diagnostics and evidence quality; user can trace a segment to the action register. |
+| D11 | Three experiment decision cards | Exactly three proposals, or fewer with explicit evidence-based deferral; each names segment, hypothesis, owner role, change to test, randomisation unit, purchase outcome, guardrail, sample-size inputs and stop/review rule. |
+
+These five business outputs sit inside the full D1–D12 engagement. The team also delivers requirements/process mapping, source governance, engineering and quality evidence, independent UAT, handover and contribution records. [Detailed deliverable specifications](project/DELIVERABLES.md) define owners, artefact paths, fields, calculations and review evidence.
+
+## Required success criteria
+
+| Success ID | Required deliverable | Specific pass condition |
+| --- | --- | --- |
+| SC1 | D5 — Segment conversion scorecard | Every retained session belongs to exactly one scorecard row; segment counts reconcile to cohort totals; groups below 100 are visible but unranked; 1 purchase/4 sessions=25%. |
+| SC2 | D6 — Conversion driver and leakage assessment | Publish partition counts and exact predictor list; no PageValues/Revenue predictors; report holdout results even when baseline wins; describe end-of-session signals as retrospective. |
+| SC3 | D7 — Two ranked opportunity lists | Deterministic ties use TrafficType then VisitorType; every list row links its scorecard; include at least one excluded/deferred segment and explain why. |
+| SC4 | D8 — Growth meeting dashboard | A reviewer completes three tasks: find largest eligible non-purchase segment, compare its gap/interval, and identify its proposed experiment; all values match the scorecard. |
+| SC5 | D11 — Three experiment decision cards | Every selected segment has ≥100 observed sessions and cited evidence; calculate sample-size needs from declared baseline/MDE/power assumptions; no realised uplift or ordered-checkout-funnel claim. |
+
+These are assessment requirements, not claims that results have already been achieved. At G1 the team records simulated stakeholder approval of scope, policy assumptions and criteria; later changes require a decision log. Financial benefit, causal uplift, production safety and operational adoption need separate pilot evidence. [Acceptance and worked tests](project/ACCEPTANCE_CRITERIA.md) control pass/fail.
+
+## Data and fixed analytical boundary
+
+**Official source:** [Online Shoppers Purchasing Intention](https://archive.ics.uci.edu/dataset/468). **Required input:** online_shoppers_intention.csv. **Expected source population:** 12,330 sessions.
 
 All 12,330 sessions in the original UCI CSV; one session per distinct user in the publisher's one-year sampling frame. Keep all available months; no invented year, event timestamps or ordered clickstream.
 
-Exact official download:
-
-https://archive.ics.uci.edu/static/public/468/online+shoppers+purchasing+intention+dataset.zip
+**Download:** https://archive.ics.uci.edu/static/public/468/online+shoppers+purchasing+intention+dataset.zip
 
 Session summaries cannot reconstruct a sequential funnel or prove abandonment at a checkout step. Revenue is a Boolean purchase outcome, not money. PageValues may contain outcome-related information; exclude it from the core model. Completed-session behaviour supports retrospective analysis only, not an at-arrival targeting claim.
 
-No raw data are uploaded by this update. Teams preserve original bytes outside Git in an approved durable snapshot, with checksums, source metadata and reviewer access. The source register records verification evidence and acquisition rules.
+The [source register](data/SOURCE_REGISTER.md) records checked hashes, exact acquisition and snapshot rules. No raw data are uploaded; teams retain immutable originals outside Git with a manifest and reviewer access.
 
-## Pack navigation
-
-- [Project brief](project/PROJECT_BRIEF.md) — scope, roles and milestones.
-- [Business context](project/BUSINESS_CONTEXT.md) — stakeholders and decisions.
-- [Deliverables](project/DELIVERABLES.md) — D1–D12 and K1–K7.
-- [Acceptance criteria](project/ACCEPTANCE_CRITERIA.md) — AC1–AC12 and DT1–DT10.
-- [Governance](project/GOVERNANCE.md) — gates, assumptions and changes.
-- [Data guidance](data/README.md) and [source register](data/SOURCE_REGISTER.md).
-- [Submission pack](submission/README.md) — team repository and final evidence.
-
-## Evaluation and policy boundary
+## Analysis and decision rules
 
 Stratified 60/20/20 train/validation/test, seed 31, with exact duplicate feature groups kept together. Fit preprocessing on train only. Exclude Revenue and PageValues from predictors; document which remaining features would be unavailable at any proposed live decision time.
 
-**Primary risk:** Treating PageValues or end-of-session features as information known at arrival would inflate targeting claims.
+Baseline ranks TrafficType × VisitorType groups with at least 100 sessions by non-purchase session count. Alternative ranks those same groups by conversion gap below the overall rate, with group sizes and Wilson intervals shown. Recommend at most three experiments; effects remain unmeasured.
 
-At G1 (week 2), approve requirements, source rights, actual schema and frozen bytes. At G2 (week 4), approve row accounting, all seven metrics and evaluation design. At G3 (week 6), review baseline/alternative and uncertainty. At G4 (week 8), require all twelve deliverables, ten executed domain tests, three UAT tasks, five reconciliations and a distinct-member clean rerun.
+Report measured baselines and alternatives, sample sizes, uncertainty and failure cases. A weaker model does not justify disguising results: the final recommendation must say whether to retain the baseline, improve the prototype or run a controlled pilot, and cite the evidence.
 
-Assign named authors and review partners. Unsupported mandatory outputs remain blocked until an approved source/scope change resolves them. Record actual results in a separate Mettelo team repository; this master defines the work.
+## Who does what
+
+- Business Analyst / Delivery Lead: eight testable user requirements, process map and decision-to-evidence traceability.
+- Data Governance Analyst: source rights, frozen cohort, field support and seven-KPI lineage.
+- Data Engineer: reproducible model/pipeline, exact row accounting and key/join checks.
+- Digital Product Analyst: Own session-summary interpretation and write three experiment cards with hypothesis, audience, primary conversion metric, guardrail and stop/review rule.
+- Data Scientist / Decision Modelling Analyst: baseline/alternative, feature timing, validation and sensitivity.
+- BI / Decision Product Developer: the specified decision views, filter reconciliation and static export.
+- Growth Assurance Analyst: independent checks, three stakeholder walkthroughs and clean rerun.
+
+Assign named authors and distinct reviewers; combining roles cannot remove independent review.
+
+## Delivery and review
+
+| Gate | Due | Evidence and accountable reviewers |
+| --- | --- | --- |
+| G1 scope/source | Week 2 | Head of Ecommerce Growth, BA and Governance approve eight requirements, S1 rights/manifest, actual fields and frozen cohort. Unsupported mandatory outputs block dependent work. |
+| G2 engineering/metrics | Week 4 | Engineer, Digital Product Analyst and distinct reviewer approve row accounting, keys/joins, K1–K7, five reconciliations and evaluation manifest. |
+| G3 policy | Week 6 | Head of Ecommerce Growth reviews baseline/alternative, sensitivity, workload, assumptions and one insufficient-evidence/manual-review case. |
+| G4 release | Week 8 | Simulated Mettelo panel and Growth Assurance Analyst accept D1–D12, AC1–AC12, ten executed tests, three UAT tasks and clean rerun with zero critical/high defects. |
+
+## Full master pack
+
+[Project brief](project/PROJECT_BRIEF.md) · [Business context](project/BUSINESS_CONTEXT.md) · [Deliverables](project/DELIVERABLES.md) · [Success criteria and tests](project/ACCEPTANCE_CRITERIA.md) · [Governance](project/GOVERNANCE.md) · [Data guidance](data/README.md) · [Submission](submission/README.md).
+
+This is a simulated confidential-client engagement using public/open data. Stakeholders and commercial/security scenarios are fictional. Do not claim real-client employment, endorsement, operational deployment or realised benefits. This master pack specifies work to be completed; it does not claim the team has executed it.

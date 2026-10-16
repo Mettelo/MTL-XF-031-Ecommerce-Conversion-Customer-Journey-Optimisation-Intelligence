@@ -24,3 +24,13 @@ Assign named people to all seven [brief roles](../project/PROJECT_BRIEF.md). Eve
 Own session-summary interpretation and write three experiment cards with hypothesis, audience, primary conversion metric, guardrail and stop/review rule.
 
 Maintain D1–D12/AC1–AC12/DT1–DT10 evidence index with owner, distinct reviewer, state and final-commit path. Connect numeric claims to frozen source and code/configuration. Record all manual adjustments, excluded cases and limitations; preserve an insufficient-evidence case.
+
+## Required business-output artefacts
+
+- **D5 Segment conversion scorecard:** data/curated/segment-conversion-scorecard.csv and docs/05-kpi-catalogue/segment-conversion-scorecard.md.
+- **D6 Conversion driver and leakage assessment:** docs/06-analysis/conversion-driver-and-leakage-assessment.md plus machine-readable evaluation_results.csv.
+- **D7 Two ranked opportunity lists:** docs/07-decision-framework/two-ranked-opportunity-lists.csv plus policy.md.
+- **D8 Growth meeting dashboard:** dashboard/README.md, runnable dashboard/prototype and static review export.
+- **D11 Three experiment decision cards:** deliverables/three-experiment-decision-cards.pdf plus editable slides and supporting cards/runbook.
+
+Index these under SC1–SC5 with author, distinct reviewer, executed result and final commit. Treat these paths as the default delivery contract; an equivalent tool-specific format requires an explicit documented mapping.

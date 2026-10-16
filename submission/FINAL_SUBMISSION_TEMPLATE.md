@@ -97,3 +97,19 @@ Dashboard/static export, slides/demo, operational runbook and contribution recor
 Blockers/limitations, owners and due dates: [complete]
 
 Actual reviewer/date, simulated sponsor role and ACCEPTED / REWORK / BLOCKED decision: [complete only after evidence review]
+
+## SC1–SC5 — Specific business outcome evidence
+
+| Success criterion | Required output | Actual result / evidence | Reviewer/date | State |
+| --- | --- | --- | --- | --- |
+| SC1 | D5 Segment conversion scorecard | [actual result and immutable link] | [complete] | NOT RUN |
+| SC2 | D6 Conversion driver and leakage assessment | [actual result and immutable link] | [complete] | NOT RUN |
+| SC3 | D7 Two ranked opportunity lists | [actual result and immutable link] | [complete] | NOT RUN |
+| SC4 | D8 Growth meeting dashboard | [actual result and immutable link] | [complete] | NOT RUN |
+| SC5 | D11 Three experiment decision cards | [actual result and immutable link] | [complete] | NOT RUN |
+
+G1 approval record (criterion/version, actual team approver, simulated sponsor role/date): [complete]
+
+Baseline/alternative recommendation and operational trade-off for the specified use case: [complete]
+
+Claimed benefit evidence or explicit unmeasured status; separate real-pilot adoption requirements: [complete]
